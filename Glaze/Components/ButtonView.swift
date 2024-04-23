@@ -33,7 +33,3 @@ struct ButtonView: View {
             .accentColor(.pink)
     }
 }
-
-#Preview {
-    ButtonView()
-}

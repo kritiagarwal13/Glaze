@@ -10,7 +10,7 @@ import SwiftUI
 struct LaunchScreenView: View {
     var body: some View {
         VStack {
-            Image("glaze-wordmark") // Ensure you have an image set in your assets named 'logo'
+            Image("glaze-wordmark")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 200, height: 200)

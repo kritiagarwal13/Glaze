@@ -8,8 +8,83 @@
 import SwiftUI
 
 struct HomeScreenView: View {
+    @State private var offsetX: CGFloat = 0
+    @State private var animateRight = true
+    let imageWidthOffset: CGFloat = 300
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack() {
+                Image("glaze-wordmark")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 100, height: 30)
+                    .padding(.bottom, 20)
+                
+                VStack(alignment: .leading) { // Set alignment to leading for the inner VStack
+                    Text("Behind every girl")
+                        .textCase(.uppercase)
+                        .frame(maxWidth: .infinity, alignment: .leading)  // Align text to the left
+                        .font(.title)
+                        .bold()
+                        .padding(.leading, 10)
+                        .padding(.bottom, -10)
+                    
+                    GeometryReader { geometry in
+                        Image("landing")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: geometry.size.width)
+                            .offset(x: offsetX)
+                            .onAppear {
+                                // Set initial offset to start just off the left side of the screen
+                                offsetX = -imageWidthOffset
+                                // Start the continuous animation
+                                animate()
+                            }
+                            .shadow(color: .gray, radius: 10)
+                    }
+                    .frame(height: 360) // Set a fixed height for the GeometryReader
+                    
+                    Text("With immaculate style")
+                        .textCase(.uppercase)
+                        .frame(maxWidth: .infinity, alignment: .trailing)  // Align text to the right
+                        .bold()
+                        .font(.title)
+                        .padding(.trailing, 10)
+                        .padding(.top, -10)
+                    
+                    Text("Is a site where you can send, save and shop all your inspo.")
+                        .bold()
+                        .font(.subheadline)
+                        .multilineTextAlignment(.center)
+                        .padding(.top, 10)
+                        .frame(maxWidth: .infinity)
+                    
+                    Spacer()
+                }
+                
+                VStack {
+                    PostCardView() // Ensure this view is implemented correctly elsewhere
+                        .padding(.top, 20)
+                }
+            }
+        }
+        
+    }
+    
+    func animate() {
+        let delay = 5.0  // Delay before the animation starts
+        let duration = 20.0  // Duration of one way of the animation
+        
+        // Determine next offset based on current animation direction
+        let nextOffset = animateRight ? imageWidthOffset : -imageWidthOffset
+        animateRight.toggle()  // Toggle direction for next cycle
+        
+        // Animate the offset to the new position
+        withAnimation(Animation.linear(duration: duration).repeatForever(autoreverses: true).delay(delay)) {
+            offsetX = nextOffset
+        }
     }
 }
 
