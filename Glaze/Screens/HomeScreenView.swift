@@ -10,54 +10,81 @@ import SwiftUI
 struct HomeScreenView: View {
     @State private var offsetX: CGFloat = 0
     @State private var animateRight = true
+    
+    @AppStorage("isUserLoggedIn") var isUserLoggedIn: Bool = false
+    
     let imageWidthOffset: CGFloat = 300
     
     var body: some View {
-        ScrollView {
-            VStack() {
-                NavBarView()
-                
-                VStack(alignment: .leading) { // Set alignment to leading for the inner VStack
-                    Text("Behind every girl")
-                        .textCase(.uppercase)
-                        .frame(maxWidth: .infinity, alignment: .leading)  // Align text to the left
-                        .font(.title)
-                        .bold()
-                        .padding(.leading, 10)
-                        .padding(.bottom, -10)
+        NavigationView {
+            ScrollView {
+                HStack {
+                    Spacer()
                     
-                    GeometryReader { geometry in
-                        Image("landing")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: geometry.size.width)
-                            .offset(x: offsetX)
-                            .onAppear {
-                                // Set initial offset to start just off the left side of the screen
-                                offsetX = -imageWidthOffset
-                                // Start the continuous animation
-                                animate()
-                            }
-                            .shadow(color: .gray, radius: 10)
-                    }
-                    .frame(height: 360) // Set a fixed height for the GeometryReader
-                    
-                    Text("With immaculate style")
-                        .textCase(.uppercase)
-                        .frame(maxWidth: .infinity, alignment: .trailing)  // Align text to the right
-                        .bold()
-                        .font(.title)
-                        .padding(.trailing, 10)
-                        .padding(.top, -10)
-                    
-                    Text("Is a site where you can send, save and shop all your inspo.")
-                        .bold()
-                        .font(.caption)
-                        .multilineTextAlignment(.center)
-                        .frame(maxWidth: .infinity)
-                        .frame(alignment: .center)
+                    Image("glaze")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 20)
+                        .padding(.leading, 50)
                     
                     Spacer()
+                    
+                    NavigationLink(destination: LoginView()) {
+                        Image(systemName: "person.crop.circle.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                            .padding(.trailing, 20)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
+                .frame(height: 30)
+                
+                if isUserLoggedIn {
+                    SearchView()
+                } else {
+                    VStack(alignment: .leading) { // Set alignment to leading for the inner VStack
+                        Text("Behind every girl")
+                            .textCase(.uppercase)
+                            .frame(maxWidth: .infinity, alignment: .leading)  // Align text to the left
+                            .font(.title)
+                            .bold()
+                            .padding(.leading, 10)
+                            .padding(.bottom, -10)
+                        
+                        GeometryReader { geometry in
+                            Image("landing")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: geometry.size.width)
+                                .offset(x: offsetX)
+                                .onAppear {
+                                    // Set initial offset to start just off the left side of the screen
+                                    offsetX = -imageWidthOffset
+                                    // Start the continuous animation
+                                    animate()
+                                }
+                                .shadow(color: .gray, radius: 10)
+                        }
+                        .frame(height: 360) // Set a fixed height for the GeometryReader
+                        
+                        Text("With immaculate style")
+                            .textCase(.uppercase)
+                            .frame(maxWidth: .infinity, alignment: .trailing)  // Align text to the right
+                            .bold()
+                            .font(.title)
+                            .padding(.trailing, 10)
+                            .padding(.top, -10)
+                        
+                        Text("Is a site where you can send, save and shop all your inspo.")
+                            .bold()
+                            .font(.caption)
+                            .multilineTextAlignment(.center)
+                            .frame(maxWidth: .infinity)
+                            .frame(alignment: .center)
+                        
+                        Spacer()
+                    }
                 }
                 
                 VStack(alignment: .leading) {
@@ -75,7 +102,6 @@ struct HomeScreenView: View {
                 }
             }
         }
-        
     }
     
     func animate() {

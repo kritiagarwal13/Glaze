@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NavBarView: View {
     var body: some View {
-        ZStack {
+        NavigationView {
             HStack {
                 Spacer()
                 
@@ -21,11 +21,14 @@ struct NavBarView: View {
                 
                 Spacer()
                 
-                Image(systemName: "person.crop.circle.fill")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 20, height: 20)
-                    .padding(.trailing, 20)
+                NavigationLink(destination: LoginView()) {
+                    Image(systemName: "person.crop.circle.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 20, height: 20)
+                        .padding(.trailing, 20)
+                }
+                .buttonStyle(PlainButtonStyle())
             }
             .frame(height: 30)
         }
