@@ -18,8 +18,8 @@ struct HomeScreenView: View {
                 Image("glaze-wordmark")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 100, height: 30)
-                    .padding(.bottom, 20)
+                    .frame(width: 100, height: 20)
+                    .padding(.bottom, 10)
                 
                 VStack(alignment: .leading) { // Set alignment to leading for the inner VStack
                     Text("Behind every girl")
@@ -56,17 +56,26 @@ struct HomeScreenView: View {
                     
                     Text("Is a site where you can send, save and shop all your inspo.")
                         .bold()
-                        .font(.subheadline)
+                        .font(.caption)
                         .multilineTextAlignment(.center)
-                        .padding(.top, 10)
                         .frame(maxWidth: .infinity)
+                        .frame(alignment: .center)
                     
                     Spacer()
                 }
                 
-                VStack {
-                    PostCardView() // Ensure this view is implemented correctly elsewhere
+                VStack(alignment: .leading) {
+                    Text("Explore")
+                        .font(.headline)
+                        .bold()
+                        .textCase(.uppercase)
+                        .foregroundColor(Color.accentColor)
+                        .monospaced()
                         .padding(.top, 20)
+                        .padding(.leading, 10)
+                        .padding(.bottom, -15)
+                    
+                    PostCardView() // Ensure this view is implemented correctly elsewhere
                 }
             }
         }
