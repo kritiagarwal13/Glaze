@@ -42,7 +42,6 @@ struct MyPostCardCell: View {
                 Image("post2")
                     .resizable()
                     .frame(width: 20, height: 20)
-//                    .background(Color.accentColor)
                     .cornerRadius(10)
                     .clipped()
                 

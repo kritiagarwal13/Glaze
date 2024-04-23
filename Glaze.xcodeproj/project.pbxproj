@@ -18,6 +18,7 @@
 		D689C9A52BD7256C0060B513 /* BubbleBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9A42BD7256C0060B513 /* BubbleBackgroundView.swift */; };
 		D689C9AA2BD7262B0060B513 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9A92BD7262B0060B513 /* OnboardingModel.swift */; };
 		D689C9AC2BD72B470060B513 /* PostCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9AB2BD72B470060B513 /* PostCardView.swift */; };
+		D689C9AE2BD7E9A20060B513 /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9AD2BD7E9A20060B513 /* NavBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		D689C9A42BD7256C0060B513 /* BubbleBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleBackgroundView.swift; sourceTree = "<group>"; };
 		D689C9A92BD7262B0060B513 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 		D689C9AB2BD72B470060B513 /* PostCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCardView.swift; sourceTree = "<group>"; };
+		D689C9AD2BD7E9A20060B513 /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				D689C9A42BD7256C0060B513 /* BubbleBackgroundView.swift */,
 				D689C9A22BD725460060B513 /* ButtonView.swift */,
 				D689C9AB2BD72B470060B513 /* PostCardView.swift */,
+				D689C9AD2BD7E9A20060B513 /* NavBarView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				D689C9AA2BD7262B0060B513 /* OnboardingModel.swift in Sources */,
 				D689C99B2BD6F84B0060B513 /* LaunchScreenView.swift in Sources */,
 				D689C99D2BD6F9E80060B513 /* OnboardingScreenView.swift in Sources */,
+				D689C9AE2BD7E9A20060B513 /* NavBarView.swift in Sources */,
 				D689C9A32BD725460060B513 /* ButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

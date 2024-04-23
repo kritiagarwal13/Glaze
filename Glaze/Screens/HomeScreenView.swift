@@ -15,11 +15,7 @@ struct HomeScreenView: View {
     var body: some View {
         ScrollView {
             VStack() {
-                Image("glaze-wordmark")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 100, height: 20)
-                    .padding(.bottom, 10)
+                NavBarView()
                 
                 VStack(alignment: .leading) { // Set alignment to leading for the inner VStack
                     Text("Behind every girl")

@@ -11,7 +11,7 @@ import SwiftUI
 struct BubbleBackgroundView: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 30, style: .continuous) // Rounded rectangle with continuous corners
-            .fill(Color.white) // Fill color can be adjusted
+            .fill(Color.white)
             .shadow(color: .gray, radius: 10, x: 0, y: 4) // Optional shadow for a subtle depth effect
     }
 }
