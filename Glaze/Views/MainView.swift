@@ -13,16 +13,7 @@ struct MainView: View {
     @AppStorage("showGetStartedButton") var showGetStartedButton:Bool = false
     
     var body: some View {
-//        if isOnBoarding {
-//            TabView {
-//                ForEach(onboardingStructure.indices, id: \.self) { index in
-//                    OnboardingView(showGetStartedButton: index == onboardingStructure.count - 1, onbScreen: onboardingStructure[index])
-//                }
-//            }
-//            .tabViewStyle(.page)
-//        } else {
-            PostsView()
-//        }
+        PostsView()
     }
 }
 

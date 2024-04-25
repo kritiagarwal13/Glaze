@@ -9,11 +9,11 @@ import SwiftUI
 
 struct PostItemView: View {
     var namespace: Namespace.ID
-    @Binding var selectedPost: Int? // Use this to control the detailed view
+    @Binding var selectedPost: Int?
     var index: Int
 
-    var post: Post { // Your Post model
-        posts[index] // Assume you have a static array of posts
+    var post: Post {
+        posts[index]
     }
 
     var body: some View {
@@ -46,7 +46,7 @@ struct PostItemView: View {
         .frame(height: 400)
         .onTapGesture {
             withAnimation(.spring(response: 0.7, dampingFraction: 0.7)) {
-                selectedPost = index // Control the detail view presentation
+                selectedPost = index
             }
         }
     }
@@ -55,9 +55,6 @@ struct PostItemView: View {
 struct PostItemView_Previews: PreviewProvider {
     @Namespace static var namespace
     static var previews: some View {
-        // You need to pass a binding to an optional Int for `selectedPost`
-        // Assuming you have a Post model, you would pass the index and bind it to `selectedPost`
-        // Here's how you would preview it with a fixed index (e.g., index 0 for the first post)
         StatefulPreviewWrapper(nil as Int?) { selectedPost in
             PostItemView(namespace: namespace, selectedPost: selectedPost, index: 0)
         }

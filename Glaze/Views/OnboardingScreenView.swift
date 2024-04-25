@@ -28,18 +28,18 @@ struct OnboardingView: View {
                     .font(.subheadline)
                     .monospaced()
                     .bold()
-                    .frame(maxWidth: .infinity, alignment: .center) // Ensures text is aligned left and stretches across the top
+                    .frame(maxWidth: .infinity, alignment: .center)
                 
                 Text(onbScreen.headline)
                     .multilineTextAlignment(.center)
                     .font(.headline)
                     .monospaced()
-                    .frame(maxWidth: .infinity, alignment: .center) // Similar alignment for consistency
+                    .frame(maxWidth: .infinity, alignment: .center)
             }.padding(.bottom, 10)
             
             ZStack {
-                BubbleBackgroundView() // Background bubble view
-                    .frame(width: 300, height: 520) // Adjust size as needed
+                BubbleBackgroundView()
+                    .frame(width: 300, height: 520)
                 
                 Image(onbScreen.image)
                     .resizable()
@@ -49,7 +49,7 @@ struct OnboardingView: View {
                     .clipped()
             }
             
-            Spacer() // Pushes everything to the top
+            Spacer()
             
             if showGetStartedButton {
                 ButtonView(onPress: {
@@ -65,7 +65,7 @@ struct OnboardingView: View {
             }
         }
         .padding(.horizontal, 20)
-        .padding(.top, 20) // Adds padding at the top for better spacing
+        .padding(.top, 20)
         .cornerRadius(20)
     }
 }

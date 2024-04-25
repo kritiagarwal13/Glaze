@@ -16,7 +16,7 @@ struct LaunchScreenView: View {
                 .frame(width: 200, height: 200)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.white) // Set the background color
+        .background(Color.white)
         .edgesIgnoringSafeArea(.all)
     }
 }

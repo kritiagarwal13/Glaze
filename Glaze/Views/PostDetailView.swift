@@ -13,7 +13,7 @@ struct PostDetailView: View {
     var index: Int
     
     var post: Post {
-        posts[index] // Assume you have a static array of posts in PostModel
+        posts[index]
     }
     
     var body: some View {
@@ -65,7 +65,6 @@ struct PostDetailView: View {
 struct PostDetailView_Previews: PreviewProvider {
     @Namespace static var namespace
     static var previews: some View {
-        // Similar to PostItemView, you need to use `selectedPost` which is a binding to an optional Int
         StatefulPreviewWrapper(nil as Int?) { selectedPost in
             PostDetailView(namespace: namespace, selectedPost: selectedPost, index: 0)
         }
