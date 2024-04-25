@@ -30,7 +30,7 @@ struct PostDetailView: View {
                             .frame(width: 20, height: 20, alignment: .center)
                             .cornerRadius(10)
                         
-                            
+                        
                         VStack(alignment: .leading, spacing: -2) {
                             Text(post.username)
                                 .font(.footnote)
@@ -41,13 +41,12 @@ struct PostDetailView: View {
                                 .font(.caption)
                                 .foregroundColor(.black)
                         }
-                        .padding(2)
+                        .padding(8)
+                        .padding(.leading, -10)
                         .matchedGeometryEffect(id: "mask\(post.id)", in: namespace)
                     }
-                    .padding(.leading, 10)
+                    .padding(.leading, 20)
                     .padding(.top, -60)
-                    
-    //                Spacer()
                     
                     RecommendationGridView()
                 }
@@ -58,16 +57,25 @@ struct PostDetailView: View {
                     selectedPost = nil
                 }
             } label: {
-                Image(systemName: "xmark")
+                Image(systemName: "chevron.left")
                     .font(.body.weight(.bold))
                     .foregroundColor(.black)
                     .padding(8)
                     .background(.white, in: Circle())
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-            .padding(.horizontal,10)
-            .padding(.vertical,10)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+//            .padding(.horizontal,10)
+//            .padding(.vertical,10)
         }
+        .gesture(
+            DragGesture().onEnded { value in
+                if value.translation.width > 0 { // right swipe
+                    withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {
+                        selectedPost = nil
+                    }
+                }
+            }
+        )
     }
     
     var cover : some View {
