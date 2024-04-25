@@ -64,8 +64,6 @@ struct PostDetailView: View {
                     .background(.white, in: Circle())
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-//            .padding(.horizontal,10)
-//            .padding(.vertical,10)
         }
         .gesture(
             DragGesture().onEnded { value in

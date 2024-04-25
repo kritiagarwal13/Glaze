@@ -36,9 +36,7 @@ struct HomeScreenView: View {
                             .frame(width: geometry.size.width)
                             .offset(x: offsetX)
                             .onAppear {
-                                // Set initial offset to start just off the left side of the screen
                                 offsetX = -imageWidthOffset
-                                // Start the continuous animation
                                 animate()
                             }
                             .shadow(color: .gray, radius: 10)
@@ -58,8 +56,6 @@ struct HomeScreenView: View {
                         .font(.subheadline)
                         .multilineTextAlignment(.center)
                         .frame(maxWidth: .infinity)
-//                        .frame(alignment: .center)
-//                        .frame(height: 80)
                 }
                 
             }
@@ -67,14 +63,12 @@ struct HomeScreenView: View {
     }
     
     func animate() {
-        let delay = 1.0  // Delay before the animation starts
-        let duration = 45.0  // Duration of one way of the animation
+        let delay = 1.0
+        let duration = 45.0
         
-        // Determine next offset based on current animation direction
         let nextOffset = animateRight ? imageWidthOffset : -imageWidthOffset
-        animateRight.toggle()  // Toggle direction for next cycle
+        animateRight.toggle()
         
-        // Animate the offset to the new position
         withAnimation(Animation.linear(duration: duration).repeatForever(autoreverses: true).delay(delay)) {
             offsetX = nextOffset
         }

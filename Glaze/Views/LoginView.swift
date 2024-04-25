@@ -19,8 +19,8 @@ struct LoginView: View {
                     .textEditorStyle(.automatic)
                 
                 TextField(text: $username, prompt: Text("Phone Number")) {
-                        Text("Phone Number")
-                    }
+                    Text("Phone Number")
+                }
             }
             .padding([.leading, .trailing], 120)
             

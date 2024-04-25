@@ -11,11 +11,11 @@ struct PostItemView: View {
     var namespace: Namespace.ID
     @Binding var selectedPost: Int?
     var index: Int
-
+    
     var post: Post {
         posts[index]
     }
-
+    
     var body: some View {
         VStack {
             Image(post.image)
@@ -23,7 +23,6 @@ struct PostItemView: View {
                 .aspectRatio(contentMode: .fit)
                 .matchedGeometryEffect(id: "image\(post.id)", in: namespace)
                 .cornerRadius(5)
-//                .frame(height: 400)
                 .clipped()
             
             HStack {
@@ -32,7 +31,7 @@ struct PostItemView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 20, height: 20)
                     .cornerRadius(10)
-                    
+                
                 VStack(alignment: .leading, spacing: -2) {
                     Text(post.username)
                         .font(.footnote)
@@ -68,12 +67,12 @@ struct PostItemView_Previews: PreviewProvider {
 struct StatefulPreviewWrapper<Value, Content: View>: View {
     @State private var value: Value
     let content: (Binding<Value>) -> Content
-
+    
     init(_ initialValue: Value, @ViewBuilder content: @escaping (Binding<Value>) -> Content) {
         _value = State(initialValue: initialValue)
         self.content = content
     }
-
+    
     var body: some View {
         content($value)
     }
