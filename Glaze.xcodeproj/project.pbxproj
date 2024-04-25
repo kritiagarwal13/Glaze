@@ -21,6 +21,13 @@
 		D689C9AE2BD7E9A20060B513 /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9AD2BD7E9A20060B513 /* NavBarView.swift */; };
 		D689C9B02BD814240060B513 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9AF2BD814240060B513 /* SearchView.swift */; };
 		D689C9B22BD8162A0060B513 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9B12BD8162A0060B513 /* LoginView.swift */; };
+		D689C9B42BD85EDE0060B513 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9B32BD85EDE0060B513 /* ProfileView.swift */; };
+		D689C9B62BD86D3D0060B513 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9B52BD86D3C0060B513 /* CardDetailView.swift */; };
+		D689C9B82BD98F800060B513 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9B72BD98F800060B513 /* Post.swift */; };
+		D689C9BA2BDA71870060B513 /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9B92BDA71870060B513 /* PostsView.swift */; };
+		D689C9BC2BDA72170060B513 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9BB2BDA72170060B513 /* CloseButton.swift */; };
+		D689C9BE2BDA72600060B513 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9BD2BDA72600060B513 /* PostDetailView.swift */; };
+		D689C9C22BDA97870060B513 /* PostItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9C12BDA97870060B513 /* PostItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +46,13 @@
 		D689C9AD2BD7E9A20060B513 /* NavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
 		D689C9AF2BD814240060B513 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		D689C9B12BD8162A0060B513 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D689C9B32BD85EDE0060B513 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		D689C9B52BD86D3C0060B513 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
+		D689C9B72BD98F800060B513 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		D689C9B92BDA71870060B513 /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
+		D689C9BB2BDA72170060B513 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		D689C9BD2BDA72600060B513 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		D689C9C12BDA97870060B513 /* PostItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,11 +85,10 @@
 		D689C9892BD6F5650060B513 /* Glaze */ = {
 			isa = PBXGroup;
 			children = (
-				D689C9A82BD7260A0060B513 /* DataModel */,
-				D689C9A72BD725960060B513 /* Screens */,
-				D689C9A62BD725820060B513 /* Components */,
 				D689C98A2BD6F5650060B513 /* GlazeApp.swift */,
-				D689C99A2BD6F84B0060B513 /* LaunchScreenView.swift */,
+				D689C9A82BD7260A0060B513 /* DataModel */,
+				D689C9A72BD725960060B513 /* Views */,
+				D689C9A62BD725820060B513 /* Components */,
 				D689C98E2BD6F5660060B513 /* Assets.xcassets */,
 				D689C9902BD6F5660060B513 /* Preview Content */,
 			);
@@ -98,25 +111,33 @@
 				D689C9AB2BD72B470060B513 /* PostCardView.swift */,
 				D689C9AD2BD7E9A20060B513 /* NavBarView.swift */,
 				D689C9AF2BD814240060B513 /* SearchView.swift */,
+				D689C9BB2BDA72170060B513 /* CloseButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		D689C9A72BD725960060B513 /* Screens */ = {
+		D689C9A72BD725960060B513 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				D689C99C2BD6F9E80060B513 /* OnboardingScreenView.swift */,
 				D689C99E2BD705790060B513 /* HomeScreenView.swift */,
 				D689C98C2BD6F5650060B513 /* MainView.swift */,
+				D689C99A2BD6F84B0060B513 /* LaunchScreenView.swift */,
 				D689C9B12BD8162A0060B513 /* LoginView.swift */,
+				D689C9B32BD85EDE0060B513 /* ProfileView.swift */,
+				D689C9B52BD86D3C0060B513 /* CardDetailView.swift */,
+				D689C9B92BDA71870060B513 /* PostsView.swift */,
+				D689C9C12BDA97870060B513 /* PostItemView.swift */,
+				D689C9BD2BDA72600060B513 /* PostDetailView.swift */,
 			);
-			path = Screens;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D689C9A82BD7260A0060B513 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
 				D689C9A92BD7262B0060B513 /* OnboardingModel.swift */,
+				D689C9B72BD98F800060B513 /* Post.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -192,17 +213,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				D689C9AC2BD72B470060B513 /* PostCardView.swift in Sources */,
+				D689C9B42BD85EDE0060B513 /* ProfileView.swift in Sources */,
 				D689C98D2BD6F5650060B513 /* MainView.swift in Sources */,
 				D689C98B2BD6F5650060B513 /* GlazeApp.swift in Sources */,
 				D689C99F2BD705790060B513 /* HomeScreenView.swift in Sources */,
 				D689C9A52BD7256C0060B513 /* BubbleBackgroundView.swift in Sources */,
+				D689C9BC2BDA72170060B513 /* CloseButton.swift in Sources */,
 				D689C9B22BD8162A0060B513 /* LoginView.swift in Sources */,
 				D689C9AA2BD7262B0060B513 /* OnboardingModel.swift in Sources */,
+				D689C9BE2BDA72600060B513 /* PostDetailView.swift in Sources */,
 				D689C99B2BD6F84B0060B513 /* LaunchScreenView.swift in Sources */,
+				D689C9B82BD98F800060B513 /* Post.swift in Sources */,
 				D689C99D2BD6F9E80060B513 /* OnboardingScreenView.swift in Sources */,
+				D689C9C22BDA97870060B513 /* PostItemView.swift in Sources */,
 				D689C9AE2BD7E9A20060B513 /* NavBarView.swift in Sources */,
 				D689C9A32BD725460060B513 /* ButtonView.swift in Sources */,
 				D689C9B02BD814240060B513 /* SearchView.swift in Sources */,
+				D689C9BA2BDA71870060B513 /* PostsView.swift in Sources */,
+				D689C9B62BD86D3D0060B513 /* CardDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
