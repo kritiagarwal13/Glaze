@@ -13,7 +13,7 @@ struct HomeScreenView: View {
     
     @AppStorage("isUserLoggedIn") var isUserLoggedIn: Bool = false
     
-    let imageWidthOffset: CGFloat = 300
+    let imageWidthOffset: CGFloat = -300
     var searchText: String = ""
     
     var body: some View {
@@ -36,7 +36,9 @@ struct HomeScreenView: View {
                             .frame(width: geometry.size.width)
                             .offset(x: offsetX)
                             .onAppear {
-                                offsetX = imageWidthOffset
+                                // Set initial offset to start just off the left side of the screen
+                                offsetX = -imageWidthOffset
+                                // Start the continuous animation
                                 animate()
                             }
                             .shadow(color: .gray, radius: 10)
@@ -56,7 +58,8 @@ struct HomeScreenView: View {
                         .font(.subheadline)
                         .multilineTextAlignment(.center)
                         .frame(maxWidth: .infinity)
-                        .frame(alignment: .center)
+//                        .frame(alignment: .center)
+//                        .frame(height: 80)
                 }
                 
             }
@@ -64,8 +67,8 @@ struct HomeScreenView: View {
     }
     
     func animate() {
-        let delay = 5.0  // Delay before the animation starts
-        let duration = 20.0  // Duration of one way of the animation
+        let delay = 1.0  // Delay before the animation starts
+        let duration = 45.0  // Duration of one way of the animation
         
         // Determine next offset based on current animation direction
         let nextOffset = animateRight ? imageWidthOffset : -imageWidthOffset

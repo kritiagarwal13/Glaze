@@ -45,7 +45,7 @@ struct PostsView: View {
                     .frame(height: 30)
                     
                     HomeScreenView()
-                        .frame(width: UIScreen.main.bounds.width, height: 550)
+                        .frame(width: UIScreen.main.bounds.width, height: 500)
                         .background(Color.white)
                     
                     Text("Explore")
