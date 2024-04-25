@@ -18,17 +18,39 @@ struct PostDetailView: View {
     
     var body: some View {
         ZStack {
-            Color.black.ignoresSafeArea()
-            VStack {
-                cover
-                
-                Text(post.username)
-                    .fontWeight(.bold)
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .matchedGeometryEffect(id: "title\(post.id)", in: namespace)
-                
-                Spacer()
+            Color.white.ignoresSafeArea()
+            ScrollView {
+                VStack {
+                    cover
+                    
+                    HStack {
+                        Image("user")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20, alignment: .center)
+                            .cornerRadius(10)
+                        
+                            
+                        VStack(alignment: .leading, spacing: -2) {
+                            Text(post.username)
+                                .font(.footnote)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .foregroundColor(.black)
+                            
+                            Text("sent an inspo 1 hr")
+                                .font(.caption)
+                                .foregroundColor(.black)
+                        }
+                        .padding(2)
+                        .matchedGeometryEffect(id: "mask\(post.id)", in: namespace)
+                    }
+                    .padding(.leading, 10)
+                    .padding(.top, -60)
+                    
+    //                Spacer()
+                    
+                    RecommendationGridView()
+                }
             }
             
             Button {
@@ -43,8 +65,8 @@ struct PostDetailView: View {
                     .background(.white, in: Circle())
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
-            .padding(.horizontal,0)
-            .padding(.vertical,0)
+            .padding(.horizontal,10)
+            .padding(.vertical,10)
         }
     }
     
@@ -56,9 +78,10 @@ struct PostDetailView: View {
             .frame(height:600)
             .foregroundStyle(.white)
             .background(
-                Image(post.image).resizable().aspectRatio(contentMode: .fill)
+                Image(post.image).resizable().aspectRatio(contentMode: .fit).cornerRadius(10)
                     .matchedGeometryEffect(id: "image\(post.id)", in: namespace)
             )
+            .padding(10)
     }
 }
 

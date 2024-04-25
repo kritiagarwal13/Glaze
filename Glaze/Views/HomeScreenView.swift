@@ -64,13 +64,14 @@ struct HomeScreenView: View {
     }
     
     func animate() {
-        let delay = 4.0
-        let duration = 20.0
+        let delay = 5.0  // Delay before the animation starts
+        let duration = 20.0  // Duration of one way of the animation
         
+        // Determine next offset based on current animation direction
+        let nextOffset = animateRight ? imageWidthOffset : -imageWidthOffset
+        animateRight.toggle()  // Toggle direction for next cycle
         
-        let nextOffset = animateRight ? -imageWidthOffset : imageWidthOffset
-        animateRight.toggle()
-        
+        // Animate the offset to the new position
         withAnimation(Animation.linear(duration: duration).repeatForever(autoreverses: true).delay(delay)) {
             offsetX = nextOffset
         }

@@ -16,7 +16,6 @@
 		D689C99F2BD705790060B513 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C99E2BD705790060B513 /* HomeScreenView.swift */; };
 		D689C9AA2BD7262B0060B513 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9A92BD7262B0060B513 /* OnboardingModel.swift */; };
 		D689C9B22BD8162A0060B513 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9B12BD8162A0060B513 /* LoginView.swift */; };
-		D689C9B42BD85EDE0060B513 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9B32BD85EDE0060B513 /* ProfileView.swift */; };
 		D689C9B82BD98F800060B513 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9B72BD98F800060B513 /* Post.swift */; };
 		D689C9BA2BDA71870060B513 /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9B92BDA71870060B513 /* PostsView.swift */; };
 		D689C9BC2BDA72170060B513 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9BB2BDA72170060B513 /* CloseButton.swift */; };
@@ -24,6 +23,8 @@
 		D689C9C22BDA97870060B513 /* PostItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9C12BDA97870060B513 /* PostItemView.swift */; };
 		D689C9C42BDAD1370060B513 /* BubbleBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9C32BDAD1370060B513 /* BubbleBackgroundView.swift */; };
 		D689C9C62BDAD13E0060B513 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9C52BDAD13E0060B513 /* ButtonView.swift */; };
+		D689C9C82BDAE4440060B513 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9C72BDAE4440060B513 /* NavBar.swift */; };
+		D689C9CA2BDAF3E90060B513 /* RecommendationGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D689C9C92BDAF3E90060B513 /* RecommendationGridView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +38,6 @@
 		D689C99E2BD705790060B513 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		D689C9A92BD7262B0060B513 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 		D689C9B12BD8162A0060B513 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		D689C9B32BD85EDE0060B513 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		D689C9B72BD98F800060B513 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		D689C9B92BDA71870060B513 /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
 		D689C9BB2BDA72170060B513 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
@@ -45,6 +45,8 @@
 		D689C9C12BDA97870060B513 /* PostItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostItemView.swift; sourceTree = "<group>"; };
 		D689C9C32BDAD1370060B513 /* BubbleBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleBackgroundView.swift; sourceTree = "<group>"; };
 		D689C9C52BDAD13E0060B513 /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		D689C9C72BDAE4440060B513 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		D689C9C92BDAF3E90060B513 /* RecommendationGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationGridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,12 +113,13 @@
 				D689C99C2BD6F9E80060B513 /* OnboardingScreenView.swift */,
 				D689C99E2BD705790060B513 /* HomeScreenView.swift */,
 				D689C98C2BD6F5650060B513 /* MainView.swift */,
+				D689C9C72BDAE4440060B513 /* NavBar.swift */,
 				D689C9B12BD8162A0060B513 /* LoginView.swift */,
-				D689C9B32BD85EDE0060B513 /* ProfileView.swift */,
 				D689C9B92BDA71870060B513 /* PostsView.swift */,
 				D689C9C12BDA97870060B513 /* PostItemView.swift */,
 				D689C9BD2BDA72600060B513 /* PostDetailView.swift */,
 				D689C99A2BD6F84B0060B513 /* LaunchScreenView.swift */,
+				D689C9C92BDAF3E90060B513 /* RecommendationGridView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,7 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D689C9B42BD85EDE0060B513 /* ProfileView.swift in Sources */,
+				D689C9C82BDAE4440060B513 /* NavBar.swift in Sources */,
 				D689C9C42BDAD1370060B513 /* BubbleBackgroundView.swift in Sources */,
 				D689C9C62BDAD13E0060B513 /* ButtonView.swift in Sources */,
 				D689C98D2BD6F5650060B513 /* MainView.swift in Sources */,
@@ -213,6 +216,7 @@
 				D689C99B2BD6F84B0060B513 /* LaunchScreenView.swift in Sources */,
 				D689C9B82BD98F800060B513 /* Post.swift in Sources */,
 				D689C99D2BD6F9E80060B513 /* OnboardingScreenView.swift in Sources */,
+				D689C9CA2BDAF3E90060B513 /* RecommendationGridView.swift in Sources */,
 				D689C9C22BDA97870060B513 /* PostItemView.swift in Sources */,
 				D689C9BA2BDA71870060B513 /* PostsView.swift in Sources */,
 			);
