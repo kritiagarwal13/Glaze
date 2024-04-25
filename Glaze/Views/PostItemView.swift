@@ -18,37 +18,76 @@ struct PostItemView: View {
 
     var body: some View {
         VStack {
-            Spacer()
-            VStack(alignment: .leading, spacing: 12) {
-
-                Spacer()
-                
-                Text(post.username)
-                    .fontWeight(.bold)
-                    .font(.callout)
-                    .foregroundColor(.accent)
-                    .frame(maxWidth: .infinity, alignment: .bottomLeading)
-                    .matchedGeometryEffect(id: "title\(post.id)", in: namespace)
-            }
-        }
-        .foregroundStyle(.white)
-        .background(
             Image(post.image)
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+                .aspectRatio(contentMode: .fit)
                 .matchedGeometryEffect(id: "image\(post.id)", in: namespace)
-                .padding(.bottom, 20)
-        )
-        .mask(
-            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                .cornerRadius(5)
+//                .frame(height: 400)
+                .clipped()
+            
+            HStack {
+                Image("user")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 20, height: 20)
+                    .cornerRadius(10)
+                    
+                VStack(alignment: .leading, spacing: -2) {
+                    Text(post.username)
+                        .font(.footnote)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(.black)
+                    
+                    Text("sent an inspo 1 hr")
+                        .font(.caption)
+                        .foregroundColor(.black)
+                }
+                .padding(-5)
                 .matchedGeometryEffect(id: "mask\(post.id)", in: namespace)
-        )
-        .frame(height: 400)
+            }
+        }
         .onTapGesture {
             withAnimation(.spring(response: 0.7, dampingFraction: 0.7)) {
                 selectedPost = index
             }
         }
+        //        VStack {
+        //
+        //            Spacer()
+        //
+        //            VStack(alignment: .leading, spacing: 12) {
+        //                Text(post.username)
+        //                    .fontWeight(.bold)
+        //                    .font(.title)
+        //                    .frame(maxWidth:.infinity,alignment: .leading)
+        //                    .matchedGeometryEffect(id: "title", in: namespace)
+        //
+        //                Text("sent an inspo 1 hr")
+        //                    .fontWeight(.bold)
+        //                    .font(.callout)
+        //
+        //            }.padding(20)
+        //
+        //        }
+        //        .foregroundStyle(.white)
+        //        .background(
+        //            Image(post.image)
+        //                .resizable()
+        //                .aspectRatio(contentMode: .fill)
+        //                .matchedGeometryEffect(id: "image\(post.id)", in: namespace)
+        //                .padding(.bottom, 20)
+        //        )
+        //        .mask(
+        //            RoundedRectangle(cornerRadius: 10, style: .continuous)
+        //                .matchedGeometryEffect(id: "mask\(post.id)", in: namespace)
+        //        )
+        //        .frame(height: 400)
+        //        .onTapGesture {
+        //            withAnimation(.spring(response: 0.7, dampingFraction: 0.7)) {
+        //                selectedPost = index
+        //            }
+        //        }
     }
 }
 
